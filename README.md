@@ -30,19 +30,19 @@ pip install -r requirements-convert.txt
 ## Usage
 Basic usage examples for processing different media types:
 
-Images (local)
+**Images** (local)
 ```
 python main.py --input path/to/image.jpg --output path/to/output/directory
 ```
-Images (remote)
+**Images** (remote)
 ```
 python main.py --input https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg --output path/to/output/directory
 ```
-GIFs (local or remote)
+**GIFs** (local or remote)
 ```
 python main.py --input path/to/animation.gif --output path/to/output/directory
 ```
-Videos (local or remote, without audio by default)
+**Videos** (local or remote, without audio by default)
 ```
 python main.py --input path/to/video.mp4 --output path/to/output/directory
 ```
