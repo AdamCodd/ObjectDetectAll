@@ -277,10 +277,9 @@ class Visualizer:
         duration: Optional[float] = None,
         include_audio: bool = False
     ) -> None:
-       """
-       Processes a video file for object detection, applying specified codecs, hardware acceleration, and additional settings, and optionally includes original audio in the output.
-       """
-        # Check if FFmpeg and FFprobe are installed
+        """
+        Processes a video file for object detection, applying specified codecs, hardware acceleration, and additional settings, and optionally includes original audio in the output.
+        """
         if shutil.which("ffmpeg") is None or shutil.which("ffprobe") is None:
             raise EnvironmentError("FFmpeg or FFprobe is not available or is not installed correctly.")
         
