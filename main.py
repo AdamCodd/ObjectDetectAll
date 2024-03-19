@@ -105,7 +105,7 @@ class Drawer:
         return font
 
     def draw_boxes(self, image: Image.Image, outputs: List[torch.Tensor], threshold: float = 0.9) -> Image.Image:
-        logits, pred_boxes = outputs  # Assume outputs are now tensors
+        logits, pred_boxes = outputs
         probas = logits.softmax(-1)[0, :, :-1]
         keep = probas.max(-1).values > threshold
         bboxes_scaled = self.rescale_bboxes(pred_boxes[0, keep].cpu(), image.size)
@@ -157,6 +157,9 @@ class Visualizer:
             self.drawer = Drawer(self.config["id2label"])
 
     def load_gif(self, file: str, image_path_or_url: str, filename_prefix: str, output_dir: pathlib.Path, threshold: float, chunk_size: int) -> None:
+        """
+        Loads a GIF from a file or URL, processes each frame to detect objects, and saves the processed frames as a new GIF.
+        """
         gif = Image.open(file)
         frames = [frame.copy().convert("RGB") for frame in ImageSequence.Iterator(gif)]
         processed_frames = self.process_media_batch(frames, None, filename_prefix, image_path_or_url, threshold, batch_size=chunk_size, is_video=True)
@@ -214,6 +217,9 @@ class Visualizer:
         return [np.split(output, output.shape[0], axis=0) for output in outputs] 
 
     def process_media_batch(self, media_batch: List[Image.Image], output_path: Optional[str], prefix: str, batch_paths: Optional[List[str]], threshold: float, batch_size: int, is_video: bool = False) -> List[Image.Image]:
+        """
+        Processes a batch of media (images or video frames), applying object detection and optionally saving the processed media.
+        """
         processed_media = []
 
         # Iterate over media_batch in chunks of batch_size
@@ -241,6 +247,9 @@ class Visualizer:
         return processed_media
 
     def process_video_frames(self, frames_batch: List[Image.Image], ffmpeg_process, threshold: float) -> None:
+        """
+        Processes a batch of video frames for object detection and writes the processed frames to an FFmpeg subprocess.
+        """
         # Process each frame and write to FFmpeg
         for frame in frames_batch:
             pixel_values_batch = self.preprocess_images_batch([frame], is_video=True)
@@ -268,7 +277,10 @@ class Visualizer:
         duration: Optional[float] = None,
         include_audio: bool = False
     ) -> None:
-       
+       """
+       Processes a video file for object detection, applying specified codecs, hardware acceleration, and additional settings, and optionally includes original audio in the output.
+       """
+        # Check if FFmpeg and FFprobe are installed
         if shutil.which("ffmpeg") is None or shutil.which("ffprobe") is None:
             raise EnvironmentError("FFmpeg or FFprobe is not available or is not installed correctly.")
         
