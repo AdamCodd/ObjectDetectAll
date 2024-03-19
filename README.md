@@ -29,6 +29,7 @@ pip install -r requirements-convert.txt
 
 ## Usage
 Basic usage examples for processing different media types:
+
 Images (local)
 ```
 python main.py --input path/to/image.jpg --output path/to/output/directory
