@@ -65,6 +65,33 @@ python main.py --input path/to/media --output path/to/output --threshold 0.5
 ```
 NB: If the threshold is decreased (from 0.9), there will be an increase in false positives.
 
+#### Arguments
+
+- `--input`: URL, path, text file, or folder. **(Required)**
+- `--output`: Output directory. **(Required)**
+- `--labels`: Specific object labels to draw (draws all if omitted).
+- `--filename`: Output filename prefix. (Default: 'out')
+- `--vcodec`: Video codec (defaults based on output format).
+- `--acodec`: Audio codec (defaults based on output format).
+- `--include_audio`: Include original audio (slows processing).
+- `--duration`: Video duration to process (seconds).
+- `--fps`: Video FPS (defaults to source FPS).
+- `--hwaccel`: Hardware acceleration method: cuda, dxva2, qsv, d3d11va, opencl, vulkan.
+- `--preset`: FFmpeg encoding preset. (Default: 'ultrafast')
+- `--bitrate`: Output video bitrate ('auto' for FFmpeg default). (Default: 'auto')
+- `--batch-size`: Batch size for processing. (Default: 10)
+- `--threads`: FFmpeg thread count (0 for auto).
+- `--threshold`: Object detection sensitivity. (Default: 0.9)
+- `--model`: Hugging Face model repository. (Default: 'hustvl/yolos-tiny')
+- `--unquantized`: Use the unquantized ONNX model if present (more accurate but slower).
+
+#### Example
+```
+python script.py --input "./input_folder" --output "./output_folder" --labels "person" "car" --filename "processed" --vcodec "libx264" --preset "medium" --batch-size 5 --threshold 0.8
+```
+
+This example processes all supported media in ./input_folder, drawing boxes around detected "person" and "car" objects, using the libx264 codec for video processing, a medium preset for encoding quality, processing in batches of 5, and using a detection threshold of 0.8. The processed files will be saved in ./output_folder with filenames prefixed with "processed".
+
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
