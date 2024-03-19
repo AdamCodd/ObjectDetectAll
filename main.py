@@ -40,7 +40,6 @@ def convert_and_quantize_model(model_id, output_dir, quantize=True, task='auto',
     )
     quantize_main(conversion_args)
 
-
 def get_media_type(path_or_url: str) -> Optional[str]:
     mime_type, _ = mimetypes.guess_type(path_or_url)
     if mime_type:
