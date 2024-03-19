@@ -1,5 +1,5 @@
 # ObjectDetectAll
-ObjectDetectAll is a comprehensive toolkit for object detection across various media types, including images, GIFs, and videos. Utilizing state-of-the-art object detection models (YOLOS by default), this project allows users to detect objects and draw bounding boxes with labels across different media formats seamlessly.
+**ObjectDetectAll** is a comprehensive toolkit for object detection across various media types, including images, GIFs, and videos. Utilizing state-of-the-art object detection models (YOLOS by default), this project allows users to detect objects and draw bounding boxes with labels across different media formats seamlessly.
 
 ## Features
 * Support for Multiple Media Types: Process any kind of images, GIFs, and videos with a single toolkit.
