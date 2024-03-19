@@ -14,7 +14,7 @@
 This project requires:
 * Python 3.6+
 * [FFmpeg](https://ffmpeg.org/download.html) for video processing. Ensure FFmpeg is installed and accessible in your system's PATH.
-* [Gifsicle](https://www.lcdf.org/gifsicle/) for GIF optimization. If not installed, the script will output an non-optimized GIF instead (i.e the output size >> input size).
+* [Gifsicle](https://www.lcdf.org/gifsicle/) for GIF optimization. If not installed, the script will output an unoptimized GIF instead (i.e the output size >> input size).
 
 
 ## Installation
