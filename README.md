@@ -65,5 +65,8 @@ NB: If the threshold is decreased (from 0.9), there will be an increase in false
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Contributing
+If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+
 ## Acknowledgments
 This project utilizes [ONNX Runtime](https://github.com/microsoft/onnxruntime), the [Transformers](https://github.com/huggingface/transformers) library from Hugging Face for object detection models and a slightly modified version of the convert.py script from [Transformers.js](https://github.com/xenova/transformers.js).
