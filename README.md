@@ -77,7 +77,7 @@ NB: If the threshold is decreased (from 0.9), there will be an increase in false
 - `--duration`: Video duration to process (seconds).
 - `--fps`: Video FPS (defaults to source FPS).
 - `--hwaccel`: Hardware acceleration method: cuda, dxva2, qsv, d3d11va, opencl, vulkan.
-- `--preset`: FFmpeg encoding preset. (Default: 'ultrafast')
+- `--preset`: FFmpeg encoding preset. (Default: 'medium')
 - `--bitrate`: Output video bitrate ('auto' for FFmpeg default). (Default: 'auto')
 - `--batch-size`: Batch size for processing. (Default: 10)
 - `--threads`: FFmpeg thread count (0 for auto).
