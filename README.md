@@ -69,7 +69,7 @@ NB: If the threshold is decreased (from 0.9), there will be an increase in false
 
 - `--input`: URL, path, text file, or folder. **(Required)**
 - `--output`: Output directory. **(Required)**
-- `--labels`: Specific object labels to draw (draws all if omitted).
+- `--labels`: Specific object labels to draw (draws all detected objects if omitted).
 - `--filename`: Output filename prefix. (Default: 'out')
 - `--vcodec`: Video codec (defaults based on output format).
 - `--acodec`: Audio codec (defaults based on output format).
