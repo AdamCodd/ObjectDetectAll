@@ -19,7 +19,7 @@ from typing import List, Tuple, Union, Any, Dict, Optional
 import mimetypes
 from convert import ConversionArguments, main as quantize_main
 
-def convert_and_quantize_model(model_id, output_dir, quantize=True, task='auto', device='cpu'):
+def convert_and_quantize_model(model_id, output_dir, quantize=True, task='auto', device='cpu') -> None:
     """
     Converts a model from the Hugging Face Hub to ONNX and optionally quantizes it.
 
@@ -86,7 +86,7 @@ class Drawer:
             cls._instance._initialized = False
         return cls._instance
 
-    def __init__(self, id2label, font_path="arial.ttf", font_size=15):
+    def __init__(self, id2label, font_path="arial.ttf", font_size=15) -> None:
         # Check if the instance has been initialized
         if not self._initialized:
             self.id2label = id2label
@@ -95,7 +95,7 @@ class Drawer:
             # Mark the instance as initialized
             self._initialized = True
 
-    def load_font(self, font_path, font_size):
+    def load_font(self, font_path: str, font_size: int) -> ImageFont.ImageFont:
         """Attempts to load a TrueType font and falls back to default font if not found."""
         try:
             font = ImageFont.truetype(font_path, font_size)
@@ -140,7 +140,7 @@ class Drawer:
         return torch.stack(b, dim=1)
 
 class Visualizer:
-    def __init__(self, config_path: pathlib.Path, model_path: pathlib.Path, model_base_path: pathlib.Path, selected_labels: Optional[List[str]] = None):
+    def __init__(self, config_path: pathlib.Path, model_path: pathlib.Path, model_base_path: pathlib.Path, selected_labels: Optional[List[str]] = None) -> None:
         with config_path.open() as f:
             self.config = json.load(f)
         self.id2label = self.config["id2label"]
