@@ -289,7 +289,7 @@ class Visualizer:
             '.avi': 'mpeg4',
             '.mov': 'libx264',
             '.mkv': 'libx264',
-            '.webm': 'libvpx-vp9',
+            '.webm': 'libvpx',
             '.flv': 'flv',
             '.wmv': 'wmv2',
             '.m4v': 'libx264',
